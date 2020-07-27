@@ -69,7 +69,6 @@ function App() {
             task.isDone = isDone;
             setTasks({...tasks})
         }
-
     }
 
     function addTask(newTaskName: string, todoListID: string) {
