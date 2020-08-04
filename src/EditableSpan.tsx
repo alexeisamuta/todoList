@@ -1,4 +1,5 @@
 import React, {ChangeEvent, useState} from "react";
+import {TextField} from "@material-ui/core";
 
 type PropsType = {
     title: string
@@ -12,7 +13,7 @@ function EditableSpan(props: PropsType) {
 
     function activateEditMode() {
         setEditMode(true)
-       /* setTitle(props.title)*/
+        /* setTitle(props.title)*/
     }
 
     function deActivateEditMode() {
@@ -25,7 +26,7 @@ function EditableSpan(props: PropsType) {
     }
 
     return editMode
-        ? <input value={title} onBlur={deActivateEditMode} autoFocus={true} onChange={changeTitle}/>
+        ? <TextField variant={"outlined"} value={title} onBlur={deActivateEditMode} autoFocus={true} onChange={changeTitle}/>
         : <span onDoubleClick={activateEditMode}>{props.title}</span>
 }
 
