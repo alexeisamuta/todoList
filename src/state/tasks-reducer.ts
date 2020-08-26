@@ -45,8 +45,10 @@ type ActionType = removeTaskActionType
     | AddTodoListActionType
     | RemoveTodoListActionType
 
+let initialState: TaskStateType = {}
 
-export const tasksReducer = (state: TaskStateType, action: ActionType): TaskStateType => {
+
+export const tasksReducer = (state: TaskStateType = initialState, action: ActionType): TaskStateType => {
     switch (action.type) {
         case 'REMOVE-TASK':
             let newTodolist = [...state[action.todoListId].filter(task => task.id !== action.taskId)]
@@ -72,8 +74,9 @@ export const tasksReducer = (state: TaskStateType, action: ActionType): TaskStat
             let newState = {...state}
             delete newState[action.id]
             return newState
+
         default:
-            throw new Error("I don't understand this type")
+            return state;
     }
 }
 
