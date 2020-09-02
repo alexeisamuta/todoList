@@ -6,7 +6,8 @@ type PropsType = {
     saveNewTitle: (newTitle: string) => void
 }
 
-function EditableSpan(props: PropsType) {
+const EditableSpan = React.memo ((props: PropsType) => {
+    console.log("EditableSpan called")
 
     let [editMode, setEditMode] = useState<boolean>(false)
     let [title, setTitle] = useState<string>(props.title)
@@ -28,7 +29,7 @@ function EditableSpan(props: PropsType) {
     return editMode
         ? <TextField variant={"outlined"} value={title} onBlur={deActivateEditMode} autoFocus={true} onChange={changeTitle}/>
         : <span onDoubleClick={activateEditMode}>{props.title}</span>
-}
+})
 
 
 export default EditableSpan;
