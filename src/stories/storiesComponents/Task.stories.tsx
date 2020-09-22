@@ -1,9 +1,9 @@
 import React from "react";
 import {Story, Meta} from '@storybook/react/types-6-0';
 
-import AddItemForm from "../AddItemForm";
+import AddItemForm from "../../AddItemForm";
 import {action} from "@storybook/addon-actions";
-import {Task} from "../Task";
+import {Task} from "../../Task";
 
 export default {
     title: 'TodoList/Task Stories',

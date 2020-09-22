@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react'
 import {todolistAPI} from "../api/todolist-api";
 
 export default {
-    title: 'API'
+    title: 'API - TODOLISTS'
 }
 
 
@@ -40,7 +40,7 @@ export const CreateTodolist = () => {
 export const DeleteTodolist = () => {
     const [state, setState] = useState<any>(null)
     useEffect(() => {
-        let todolistId = "bc70a33c-d1b6-4f71-9011-e6a192aa292b"
+        let todolistId = "6a32bb8d-4395-4178-b979-7192e572ab53"
         todolistAPI.DeleteTodolist(todolistId)
             .then((res) => {
                 setState(res.data);
